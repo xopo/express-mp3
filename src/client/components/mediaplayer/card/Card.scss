@@ -1,0 +1,126 @@
+
+$headerHeight: 70px;
+$footerHeight: 45px;
+$gray: #888;
+$white: white;
+$black: black;
+li {
+    width: 100%;
+    position: relative;
+    .menu {
+    visibility: hidden;
+    }
+    &:hover {
+    .menu {
+        visibility: visible;
+    }
+    }
+    .controls {
+        position: absolute;
+        width: 52px;
+        right: 0;
+        left: 0;
+        margin: 92px auto;
+        background: #00000075;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #0000006e;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        svg {
+            cursor: pointer;
+            width:51px;
+            height: 51px;
+            &:hover > path {
+                &:not(:last-of-type) {
+                    fill: lime;
+                }
+            }
+        }
+    }
+    .title {
+        display: flex!important;
+        svg {
+            width: 36px;
+            height: 36px;
+            path {
+                fill: #555;
+            }
+
+        }
+        overflow: hidden;
+        font-size: 14px;
+        color: #666;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        cursor: pointer;
+        &.play {
+            border-right: 5px solid lime;
+        }
+    }
+    h3 {
+        margin: 0;
+    }
+    .duration {
+        margin-top: 3px;
+        font-size: 12px;
+        font-weight: normal;
+        color: $gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            color: $gray;
+            display: flex;
+            align-items: center;
+            svg path {
+                fill: $gray;
+            }
+        }
+        &:hover, &:active {
+            a {
+                color: rgb(4, 4, 132);
+                svg path {
+                    fill: blue;
+                }
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    p.limited {
+        font-size: 12px;
+        color: $gray;
+    }
+    &:hover {
+        .title {
+            color: #333;
+        }
+        >svg path {
+            fill: $white;
+        }
+    }
+    &.active .controls svg  > path {
+        &:not(:last-of-type) {
+            fill: lime;
+        }
+    }
+
+    .limited {
+        font-size: 12px;
+        color: #888;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        cursor: pointer;
+    }
+}

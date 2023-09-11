@@ -1,0 +1,24 @@
+.mp3player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: .5em;
+    right: 1em;
+    background: white;
+    box-shadow: 2px 3px 10px #aaa;
+    margin: 0;
+    z-index: 3;
+    &.minimized {
+        > img {
+            display: none;
+        }
+        &:hover >img {
+            display: initial;
+        }
+    }
+    audio {
+        width: 327px;
+        padding: 6px;
+    }
+}
